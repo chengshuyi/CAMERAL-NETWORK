@@ -2,14 +2,12 @@
 CC   = g++ -g
 COMPILE.C  = $(CC) -c
 VPATH   = ./include
-INC = -I. -I./include/ -I./test
+INC = -L./usr/local/lib -I. -I./include/ -I./test
 LDFLAGS  = -lx264 -ljrtp
 MAKEEXE   = $(CC)
 
 SRC := $(wildcard *.cpp ./test/*.cpp)
-#SRC = ./test/transfertest.cpp yuv2x264.cpp transfer.cpp
 OBJ := $(patsubst %.cpp, %.o, $(SRC))
-
 
 EXE	:= main
 
