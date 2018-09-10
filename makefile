@@ -2,7 +2,7 @@
 CC   = g++ -g
 COMPILE.C  = $(CC) -c
 VPATH   = ./include
-INC = -L./usr/local/lib -I. -I./include/ -I./test
+INC = -L./usr/local/lib -I. -I./include/ -I./test I./usr/local/include
 LDFLAGS  = -lx264 -ljrtp
 MAKEEXE   = $(CC)
 
