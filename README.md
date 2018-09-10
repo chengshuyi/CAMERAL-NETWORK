@@ -9,18 +9,24 @@ THREE STEPS TO CREATE A CAMERAL NETWORK.
 
 #### 1.1 v4l2
 
-* 1.1.1 简介
-* 1.1.2 参考
+* ubuntu带的有，不用装。
 
 #### 1.2 x264
 
-* 1.2.1 编译
-* 1.2.2 安装
+* `git clone http://git.videolan.org/git/x264.git`
+* `make`
+* `make install`
 
 #### 1.3 jrtplib
 
-* 1.3.1 编译
-* 1.3.2 安装
+* `git clone git@github.com:j0r1/JRTPLIB.git`
+* `make` 如果出错的话，先安装一些需要的库。运行下面的命令即可。
+```
+sudo apt-get install build-essential git-core checkinstall texi2html libfaac-dev \
+libopencore-amrnb-dev libopencore-amrwb-dev libsdl1.2-dev libtheora-dev \
+libvorbis-dev libx11-dev libxfixes-dev zlib1g-dev
+```
+* `make install`
 
 ### 2. 目录介绍
 
