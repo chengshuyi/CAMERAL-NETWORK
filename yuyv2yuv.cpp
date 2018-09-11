@@ -1,12 +1,18 @@
 #include "stdint.h"
-#include "debug.h"
 
-void yuyv_2_yuv(uint8_t *yuyv_img, uint8_t *yuv_img, int width, int height)
+#include "config.h"
+#include "debug.h"
+#include "yuyv2yuv.h"
+
+void yuyv_2_yuv(uint8_t *yuyv_img, uint8_t *yuv_img)
 {
     int ynum, total_len;
     int i, j, k;
     uint8_t *y, *u, *v;
     uint8_t switches;
+    int width,height;
+    width = FRAME_PIX_WIDTH;
+    height = FRAME_PIX_HEIGHT;
 
     debug_print("function yuyv_tran_yuv");
 
