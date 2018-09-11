@@ -29,7 +29,7 @@ void yuyv_yuv_test(char *FILE_SRC,char *FILE_DST)
             printf("Encoding finished!\n");
             break;
         }
-        yuyv_2_yuv(yuyv_img, yuv_img, FRAME_PIX_WIDTH, FRAME_PIX_HEIGHT);
+        yuyv_2_yuv(yuyv_img, yuv_img);
         fwrite(yuv_img, 1, YUV_SIZE, f_dst);
         printf("Encoding %5dth frame.\n", frames);
     }

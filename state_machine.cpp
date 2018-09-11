@@ -83,7 +83,7 @@ void do_state()
     {
         debug_print("TRAN_FORMAT state, next to SEND_PACKET state.");
         /**/
-        yuyv_2_yuv(yuyv_img, yuv_img, FRAME_PIX_WIDTH, FRAME_PIX_HEIGHT);
+        yuyv_2_yuv(yuyv_img, yuv_img);
         /**/
         ret = encode_one_frame(yuv_img);
         if (ret < 0)
