@@ -27,7 +27,7 @@ void transfer_test()
         printf("ret = %d , init param for x264 caused fault.\n", ret);
         goto FAIL;
     }
-    ret = init_param_for_jrtplib(dst_ip, 3000, 4000, FPS);
+    ret = init_param_for_jrtplib();
     if (ret < 0)
     {
         printf("ret = %d , init param for jrtp caused fault.\n", ret);

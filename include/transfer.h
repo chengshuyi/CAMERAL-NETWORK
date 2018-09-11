@@ -9,7 +9,7 @@
 #define MAX_RTP_PKT_LENGTH     1386
 
 
-int init_param_for_jrtplib(uint8_t *dst_ip, uint16_t local_port, uint16_t remote_port, int fps);
+int init_param_for_jrtplib();
 int transfer_one_nalu_by_rtp(uint8_t *nalu, int len, uint32_t inc);
 void close_transfer();
 

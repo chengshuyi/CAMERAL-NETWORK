@@ -23,7 +23,6 @@ void do_state()
     int i;
     struct timeval tv;
     int r;
-    uint8_t dst_ip[] = DEST_IP;
     switch (STATIC_STATE)
     {
     case INIT_CAMERA:
@@ -43,7 +42,7 @@ void do_state()
             to_state(ERROR_STATE);
         }
         /* init jrtp*/
-        ret = init_param_for_jrtplib(dst_ip, LOCAL_PORT, REMOTE_PORT, FPS);
+        ret = init_param_for_jrtplib();
         if (ret < 0)
         {
             debug_print("init param for jrtp has caused fault.");
@@ -100,7 +99,7 @@ void do_state()
         for (i = 0; i < i_nal; ++i)
         {
             debug_print("transfer %dth nalu  size = %d", i, nal[i].i_payload);
-            ret = transfer_one_nalu_by_rtp(nal[i].p_payload, nal[i].i_payload, i==0?(900/FPS):0);
+            ret = transfer_one_nalu_by_rtp(nal[i].p_payload, nal[i].i_payload, 900/FPS);
             if (ret < 0)
             {
                 to_state(ERROR_STATE);

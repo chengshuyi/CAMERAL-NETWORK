@@ -8,6 +8,7 @@
 
 #include "transfer.h"
 #include "debug.h"
+#include "config.h"
 using namespace jrtplib;
 
 NALU_HEADER *nalu_hdr;
@@ -38,18 +39,19 @@ void close_transfer()
     session.BYEDestroy(RTPTime(10.0), "Time's up", 9);
 }
 
-int init_param_for_jrtplib(uint8_t *dst_ip, uint16_t local_port, uint16_t remote_port, int fps)
+int init_param_for_jrtplib()
 {
     int ret = 0;
-    sessionparams.SetOwnTimestampUnit(1.0 / 900);
-    transparams.SetPortbase(local_port);
+    uint8_t dest_ip[] = DEST_IP;
+    sessionparams.SetOwnTimestampUnit(1.0 / BYTES_PER_SECOND);
+    transparams.SetPortbase(LOCAL_PORT);
 
     ret = session.Create(sessionparams, &transparams);
-    RTPIPv4Address addr(dst_ip, remote_port);
+    RTPIPv4Address addr(dest_ip, REMOTE_PORT);
     ret = session.AddDestination(addr);
     session.SetDefaultPayloadType(96);
     session.SetDefaultMark(false);
-    session.SetDefaultTimestampIncrement(900/fps);
+    session.SetDefaultTimestampIncrement(BYTES_PER_SECOND/FPS);
     n = (NALU_t *)calloc(1, sizeof(NALU_t));
     return ret;
 }

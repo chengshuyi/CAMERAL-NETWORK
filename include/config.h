@@ -23,4 +23,7 @@
 #define REMOTE_PORT         4000
 #define FPS                 30
 
+//
+#define BYTES_PER_SECOND    90000
+
 #endif
