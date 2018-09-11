@@ -41,7 +41,7 @@ void close_transfer()
 int init_param_for_jrtplib(uint8_t *dst_ip, uint16_t local_port, uint16_t remote_port, int fps)
 {
     int ret = 0;
-    sessionparams.SetOwnTimestampUnit(1.0 / 90000);
+    sessionparams.SetOwnTimestampUnit(1.0 / 900);
     transparams.SetPortbase(local_port);
 
     ret = session.Create(sessionparams, &transparams);
@@ -49,7 +49,7 @@ int init_param_for_jrtplib(uint8_t *dst_ip, uint16_t local_port, uint16_t remote
     ret = session.AddDestination(addr);
     session.SetDefaultPayloadType(96);
     session.SetDefaultMark(false);
-    session.SetDefaultTimestampIncrement(90000/fps);
+    session.SetDefaultTimestampIncrement(900/fps);
     n = (NALU_t *)calloc(1, sizeof(NALU_t));
     return ret;
 }

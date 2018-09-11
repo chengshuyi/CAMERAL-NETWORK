@@ -100,7 +100,7 @@ void do_state()
         for (i = 0; i < i_nal; ++i)
         {
             debug_print("transfer %dth nalu  size = %d", i, nal[i].i_payload);
-            ret = transfer_one_nalu_by_rtp(nal[i].p_payload, nal[i].i_payload, 90000/FPS);
+            ret = transfer_one_nalu_by_rtp(nal[i].p_payload, nal[i].i_payload, i==0?(900/FPS):0);
             if (ret < 0)
             {
                 to_state(ERROR_STATE);
