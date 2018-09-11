@@ -19,7 +19,7 @@ THREE STEPS TO CREATE A CAMERAL NETWORK.
 
 #### 1.3 jrtplib
 
-* `git clone git@github.com:j0r1/JRTPLIB.git`
+* `git clone https://github.com/j0r1/JRTPLIB.git`
 * `make` 如果出错的话，先安装一些需要的库。运行下面的命令即可。
 ```
 sudo apt-get install build-essential git-core checkinstall texi2html libfaac-dev \
