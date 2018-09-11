@@ -9,6 +9,6 @@
  * @param width     the width of image.
  * @param height    the height of image.
  */
-void yuyv_2_yuv(uint8_t *yuyv_img, uint8_t *yuv_img, int width, int height);
+void yuyv_2_yuv(uint8_t *yuyv_img, uint8_t *yuv_img);
 
 #endif
