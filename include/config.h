@@ -21,7 +21,7 @@
 #define DEST_IP             {192,168,137,2}
 #define LOCAL_PORT          3000
 #define REMOTE_PORT         4000
-#define FPS                 30
+#define FPS                 120
 
 //
 #define BYTES_PER_SECOND    90000
