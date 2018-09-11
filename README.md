@@ -14,7 +14,7 @@ THREE STEPS TO CREATE A CAMERAL NETWORK.
 #### 1.2 x264
 
 * `git clone http://git.videolan.org/git/x264.git`
-* `./configure`
+* `./configure --enable-shared`
 * `make` 如果出错的话，先安装一些需要的库。运行下面的命令即可。
 ```
 sudo apt-get install build-essential git-core checkinstall texi2html libfaac-dev \
