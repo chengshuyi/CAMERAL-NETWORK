@@ -26,7 +26,7 @@ void yuyv_2_yuv(uint8_t *yuyv_img, uint8_t *yuv_img)
     {
         *y++ = yuyv_img[i];
     }
-
+    switches = 1;
     for (i = 0; i < height; i += 2)
     {
         k = (i * width << 1);
