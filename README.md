@@ -71,8 +71,6 @@ ffplay -stats -f h264 ./res/image.264
 
 ## TODO:三个步骤即可创建一个摄像头到用户终端的显示，适合的场景比如：车载摄像头
 
----
-
 ### 1. 摄像头配置
 
 * 函数名:camera_struct camera(camera_struct *cam);
