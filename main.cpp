@@ -38,9 +38,3 @@ int main(int argc, char **argv)
     test_main(test_min_level,test_max_level,100,capture_save_file,yuv_save_file,save_264_file);
     return 0;
 }
-/**
- * ffplay -f rawvideo -pixel_format yuyv422 -video_size 640x480 image.yuyv
- * ffplay -f rawvideo -pixel_format yuv420p -video_size 640x480 image.yuv
- * ffplay -stats -f h264 image.264
- * 
- */
