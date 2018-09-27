@@ -55,6 +55,20 @@ libvorbis-dev libx11-dev libxfixes-dev zlib1g-dev
     * ./main
     * 打开用户终端的接收264流的软件，比如vlc。
 
+### 4. 本地测试过程
+
+* 注释掉main.cpp里面的run()函数
+* `make`
+* `./main x,y` x是测试的开始项，y是测试的结束项
+* 之后会在res目录下面生成相应的视频文件(100帧),下面是播放命令
+
+```
+ffplay -f rawvideo -pixel_format yuyv422 -video_size 640x480 ./res/image.yuyv
+ffplay -f rawvideo -pixel_format yuv420p -video_size 640x480 ./res/image.yuv
+ffplay -stats -f h264 ./res/image.264
+```
+
+
 ## TODO:三个步骤即可创建一个摄像头到用户终端的显示，适合的场景比如：车载摄像头
 
 ---
